@@ -1,0 +1,42 @@
+{
+  "$schema": "https://hypar.io/Schemas/Function.json",
+  "id": "2879640f-500a-49e1-9fd2-b7f7b167afed",
+  "name": "SVG Creation Example",
+  "description": "This function is an example of how to create an SVG Element, to display in Hypar's web interface. To use:\n\n- Clone https://github.com/hypar-io/Elements.SVG/ and put adjacent to this project folder.\n- Add a reference to the `SVGGraphic` type in your `element_types` in `hypar.json`\n- Create an `SVG` using the `Elements.SVG` library.\n- Create an `SVGGraphic` Element, containing your `SVG`'s markup.\n- Add the `SVGGraphic` to the model output.\n- In the Hypar web UI, create a \"chart\" from the elements table containing your SVG Graphic, which you'll find in the \"Outputs\" panel.\n- Publish that chart as a widget to control size and positioning.",
+  "language": "C#",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "Length": {
+        "type": "number",
+        "description": "The Length.",
+        "minimum": 1.0,
+        "maximum": 10.0,
+        "multipleOf": 1.0,
+        "$hyparUnitType": "length"
+      },
+      "Width": {
+        "type": "number",
+        "description": "The Width.",
+        "minimum": 1.0,
+        "maximum": 10.0,
+        "multipleOf": 1.0,
+        "$hyparUnitType": "length"
+      }
+    }
+  },
+  "outputs": [
+    {
+      "unit_type": "volume",
+      "name": "Volume",
+      "description": "The volume.",
+      "type": "number"
+    }
+  ],
+  "element_types": [
+    "http://prod-api.hypar.io/schemas/SVGGraphic"
+  ],
+  "repository_url": "https://github.com/hypar-io/function",
+  "last_updated": "0001-01-01T00:00:00",
+  "cli_version": "0.9.11-alpha.11"
+}
